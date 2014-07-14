@@ -53,6 +53,7 @@ CREATE TABLE `builds` (
 `status` tinyint NOT NULL DEFAULT '0',
 `type` tinyint NOT NULL DEFAULT '0',
 `locate` varchar(20) NOT NULL DEFAULT '',
+`mark` varchar(50) NOT NULL DEFAULT '', /*the name of the build*/
 `created` datetime DEFAULT '0000-00-00 00:00:00',
 `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)

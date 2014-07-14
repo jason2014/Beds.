@@ -1,4 +1,4 @@
 Beds.
 =====
 
-Beds. is short for Bedroom Distribute System
+Beds. is short for Bedroom Distribute System.
