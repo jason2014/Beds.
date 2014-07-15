@@ -77,8 +77,13 @@ class Tools extends CI_Controller{
         $this->load->model('news_model');
         $d['name'] = $data[6];
         $this->colleges_model->set_college($d);
+        
+        $this->load->model('classes_model');
+        $d['college_name'] = $data[6];
+        $d['name'] = $data[8];
+        $this->classes_model->set_class($d);
         // builds, rooms & beds data
-
+        
         // users data 
     }
 }

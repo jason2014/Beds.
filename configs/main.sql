@@ -18,6 +18,7 @@ PRIMARY KEY (`id`)
 DROP TABLE IF EXISTS `classes`;
 CREATE TABLE `classes` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
+`college_id` int(11) NOT NULL DEFAULT '0',
 `status` tinyint NOT NULL DEFAULT '0',
 `name` varchar(50) NOT NULL DEFAULT '',
 `all_count` int(11) NOT NULL DEFAULT '0',
