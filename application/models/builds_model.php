@@ -12,7 +12,7 @@ class Builds_model extends Base_Model {
         $exist = $this->get_builds($data['name']);
         if($exist)
             return FALSE;
-        return $this->db->insert('builds', $data);
+        $this->db->insert('builds', $data);
     }
 
     public function get_builds($name = NULL){

@@ -14,7 +14,7 @@ class Tools extends CI_Controller{
 
         if (($handle = fopen($csv, 'r')) !== false) {
             while (($data = fgetcsv($handle, 0, $delimiter)) !== false) {
-                $this->insert($data);die();
+                $this->insert($data);//die();
             }
             fclose($handle);
         }
@@ -71,17 +71,16 @@ class Tools extends CI_Controller{
     */
 
     private function insert($data){
-        $d = array();
         // colleges & classes data
         echo "insert colleges & classes data".PHP_EOL;
         $this->load->model('news_model');
-        $d['name'] = $data[6];
-        $this->colleges_model->set_college($d);
+        $this->colleges_model->set_college(array('name' => $data[6]));
         
         $this->load->model('classes_model');
-        $d['college_name'] = $data[6];
-        $d['name'] = $data[8];
-        $this->classes_model->set_class($d);
+        $this->classes_model->set_class(array(
+            'college_name' => $data[6],
+            'name' => $data[8]
+        ));
         // builds, rooms & beds data
         $this->load->model('builds_model');
         $part = explode(' ', $data[1]);
@@ -95,6 +94,12 @@ class Tools extends CI_Controller{
             'type' => $data[9],
             'locate' => $locate,
             'mark' => $mark
+        ));
+
+        $this->load->model('rooms_model');
+        $this->rooms_model->set_room(array(
+            'build_name' => $name,
+            'mark' => $data[13]
         ));
         
         // users data 

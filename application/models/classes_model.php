@@ -14,7 +14,7 @@ class Classes_model extends Base_Model {
         $exist = $this->get_classes($data['name']);
         if($exist)
             return FALSE;
-        return $this->db->insert('classes', $data);
+        $this->db->insert('classes', $data);
     }
 
     public function get_classes($name = NULL){

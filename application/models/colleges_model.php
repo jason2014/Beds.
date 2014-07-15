@@ -6,7 +6,7 @@ class Colleges_model extends Base_Model {
         $exist = $this->get_colleges($data['name']);
         if($exist)
             return FALSE;
-        return $this->db->insert('colleges', $data);
+        $this->db->insert('colleges', $data);
     }
 
     public function get_colleges($name = NULL){
