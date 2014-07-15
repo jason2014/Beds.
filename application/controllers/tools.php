@@ -23,7 +23,7 @@ class Tools extends CI_Controller{
     }
     
     /*
-      床位名称,考试号,年份,标记,学院代码,学院名称,班级号,班级,性别,住宿费,区域,栋数,楼层房号,床位号,EXT1,EXT2,EXT3,EXT4,EXT5,EXT6
+      床位代码, 床位名称,考试号,年份,标记,学院代码,学院名称,班级号,班级,性别,住宿费,区域,栋数,楼层房号,床位号,EXT1,EXT2,EXT3,EXT4,EXT5,EXT6
       array(21) {
       [0]=>
       床位代码(17) "13103211131012075"
@@ -71,9 +71,12 @@ class Tools extends CI_Controller{
     */
 
     private function insert($data){
+        $d = array();
         // colleges & classes data
         echo "insert colleges & classes data".PHP_EOL;
-        
+        $this->load->model('news_model');
+        $d['name'] = $data[6];
+        $this->colleges_model->set_college($d);
         // builds, rooms & beds data
 
         // users data 
