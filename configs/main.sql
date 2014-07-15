@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `status` tinyint NOT NULL DEFAULT '0',
-`type` tinyint NOT NULL DEFAULT '0', /* 0 - male, 1 for female*/
+`type` tinyint NOT NULL DEFAULT '0', /* 1 - male, 2 for female*/
 `username` varchar(50) NOT NULL DEFAULT '',
 `password` varchar(50) NOT NULL DEFAULT '',
 `name` varchar(50) NOT NULL DEFAULT '',

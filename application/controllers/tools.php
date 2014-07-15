@@ -13,8 +13,11 @@ class Tools extends CI_Controller{
         $csv = FCPATH.'scripts/bb.csv';
 
         if (($handle = fopen($csv, 'r')) !== false) {
+            $row_num = 0;
             while (($data = fgetcsv($handle, 0, $delimiter)) !== false) {
+                echo "processing row $row_num".PHP_EOL;
                 $this->insert($data);//die();
+                $row_num++;
             }
             fclose($handle);
         }
@@ -71,8 +74,7 @@ class Tools extends CI_Controller{
     */
 
     private function insert($data){
-        // colleges & classes data
-        echo "insert colleges & classes data".PHP_EOL;
+        // colleges, classes & users data
         $this->load->model('news_model');
         $this->colleges_model->set_college(array('name' => $data[6]));
         
@@ -80,6 +82,16 @@ class Tools extends CI_Controller{
         $this->classes_model->set_class(array(
             'college_name' => $data[6],
             'name' => $data[8]
+        ));
+
+        $this->load->model('users_model');
+        $this->users_model->set_user(array(
+            'type' => $data[9],
+            'username' => $data[2],
+            'password' => $data[2],
+            'name' => $data[2],
+            'college_name' => $data[6],
+            'class_name' => $data[8],
         ));
         // builds, rooms & beds data
         $this->load->model('builds_model');
@@ -110,6 +122,5 @@ class Tools extends CI_Controller{
             'mark' => $data[14]
         ));
         
-        // users data 
     }
 }
