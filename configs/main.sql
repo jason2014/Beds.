@@ -52,9 +52,10 @@ DROP TABLE IF EXISTS `builds`;
 CREATE TABLE `builds` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `status` tinyint NOT NULL DEFAULT '0',
-`type` tinyint NOT NULL DEFAULT '0',
+`name` varchar(50) NOT NULL DEFAULT '',
+`type` tinyint NOT NULL DEFAULT '0', /*1 for male, 2 for female, 3 both*/
 `locate` varchar(20) NOT NULL DEFAULT '',
-`mark` varchar(50) NOT NULL DEFAULT '', /*the name of the build*/
+`mark` varchar(50) NOT NULL DEFAULT '', 
 `created` datetime DEFAULT '0000-00-00 00:00:00',
 `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`)

@@ -83,6 +83,19 @@ class Tools extends CI_Controller{
         $d['name'] = $data[8];
         $this->classes_model->set_class($d);
         // builds, rooms & beds data
+        $this->load->model('builds_model');
+        $part = explode(' ', $data[1]);
+
+        $name = $part[0]. $part[1];
+        $locate = $part[0];
+        $mark = substr($data[0], -7, 3);
+        
+        $this->builds_model->set_build(array(
+            'name' => $name,
+            'type' => $data[9],
+            'locate' => $locate,
+            'mark' => $mark
+        ));
         
         // users data 
     }
