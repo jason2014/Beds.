@@ -82,7 +82,7 @@ DROP TABLE IF EXISTS `beds`;
 CREATE TABLE `beds` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `room_id` int(11) NOT NULL DEFAULT '0', /* this refer to rooms table */
-`status` tinyint NOT NULL DEFAULT '0', /* 0 for on-sale, 1 for saled */
+`status` tinyint NOT NULL DEFAULT '0', /* 0 for still in processing, 1 for on-sale, 2 for saled */
 `type` tinyint NOT NULL DEFAULT '0', /* 500 -- 3, 800 -- 2, 1200 -- 1 */
 `mark` varchar(5) NOT NULL DEFAULT '', /* 1, 2, 3, 4.. */
 `created` datetime DEFAULT '0000-00-00 00:00:00',

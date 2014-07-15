@@ -101,6 +101,14 @@ class Tools extends CI_Controller{
             'build_name' => $name,
             'mark' => $data[13]
         ));
+
+        $this->load->model('beds_model');
+        $this->beds_model->set_bed(array(
+            'build_name' => $name,
+            'room_mark' => $data[13],
+            'type' => $data[10],
+            'mark' => $data[14]
+        ));
         
         // users data 
     }
