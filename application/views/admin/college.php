@@ -4,7 +4,7 @@
      <h3>男</h3>
 <?php foreach($male_rooms as $k => $room){?>
           <h4><?=$k?></h4>
-               <div id="room_mark" style="margin-bottom: 6px">
+               <div style="margin-bottom: 6px">
 <?php foreach($room as $r){?>               
 <?=$r?>,
 <?php }?>
@@ -15,7 +15,7 @@
      <h3>女</h3>          
 <?php foreach($female_rooms as $k => $room){?>
           <h4><?=$k?></h4>
-               <div id="room_mark" style="margin-bottom: 6px">
+               <div style="margin-bottom: 6px">
 <?php foreach($room as $r){?>               
 <?=$r?>,
 <?php }?>
