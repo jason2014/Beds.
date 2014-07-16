@@ -42,7 +42,9 @@ $route['tools/data_importer'] = 'tools/data_importer';
 
 $route['login'] = 'login';
 $route['admin/college'] = 'admin/college';
-$route['admin/class'] = 'admin/class';    
+$route['admin/class'] = 'admin/class';
+$route['api/(:any)'] = 'api/$1';
+
 $route['default_controller'] = 'admin/index';
 /*
 $route['news/create'] = 'news/create';

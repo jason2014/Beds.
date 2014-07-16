@@ -34,4 +34,8 @@ class Rooms_model extends Base_Model {
         return $query->row_array();
     }
 
+    public function distribute_by_storey($college_id, $build_id, $storey) {
+        $sql = "update rooms set college_id = $college_id where build_id = $build_id and storey = $storey";
+        $this->db->query($sql);
+    }
 }

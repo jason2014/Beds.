@@ -46,7 +46,7 @@ class Builds_model extends Base_Model {
 
         foreach($result as $k => $r) {
             $build_id = $r['build_id'];
-            $query2 = $this->db->query("select storey, count(id) as total_rooms, sum(bed_count) as total_beds from rooms where build_id = $build_id group by storey order by storey");
+            $query2 = $this->db->query("select storey, count(id) as total_rooms, sum(bed_count) as total_beds from rooms where build_id = $build_id and college_id = 0 group by storey order by storey");
             $result2 = $query2->result_array();
 
             if($r['build_type'] == 0)
@@ -57,4 +57,5 @@ class Builds_model extends Base_Model {
         }
         return $result;
     }
+
 }

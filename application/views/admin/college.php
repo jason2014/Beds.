@@ -4,7 +4,7 @@
      <h3><?=$s['build_name']?></h3> 
           <span><?=$s['build_type']?></span>
           <span><?=$s['storey']?>楼,共<?=$s['total_rooms']?>个房间,<?=$s['total_beds']?>个床位 </span>
-     <input type="checkbox">
+     <input type="checkbox" class="item_check" key="<?=$s['build_id']?>-<?=$s['storey']?>">
      </div>
 <?php }?>     
      <select id="college" name="college">

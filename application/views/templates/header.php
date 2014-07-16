@@ -11,7 +11,7 @@
      <li><a href="#">分配宿舍至各学院</a>
        <ul>
          <li><a href="/admin/colleges">按楼层分配</a></li>
-         <li><a href="/admin/classes">按床位分配</a></li>
+         <li><a href="/admin/colleges">按房间分配</a></li>
        </ul>
      </li>
      <li><a href="#">分配宿舍至各班级</a>

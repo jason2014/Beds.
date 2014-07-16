@@ -1,10 +1,28 @@
 $(function(){
-    $page = $('body').attr('id');
+    var page = $('body').attr('id');
 
-    if($page === 'admin-colleges'){
+    if(page === 'admin-colleges'){
 
-        $('.item').click(function(){
-
+        $('.button').click(function(e){
+            e.preventDefault();
+            var key_str = '';
+            $.each($('.item_check'), function(i, item){
+                var $item = $(item);
+                if($item.attr('checked')) {
+                    key_str += $item.attr('key') + ',';
+                }
+            });
+            var college = $('#college').val();
+            if(college === '#' || key_str === '') {
+                alert("请勾选宿舍,并请选择学院");
+            } else {
+                $.post('/api/distributebystorey', {key: key_str, college: college}, function(response) {
+                    var response_obj = $.parseJSON(response);
+                    if(response_obj.status === 'success') {
+                        alert("宿舍分配成功");
+                    }
+                });
+            }            
         });
     }
-});  
+});
