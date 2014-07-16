@@ -55,9 +55,40 @@ background:#dfc184;
 color:#000;
 }
 /***************************/
-div#menu {background-color:#ffff99; width:30%; float:left;}
+div#menu {
+    //background-color:#ffff99;
+    width:20%;
+    float:left;
+}
+
+.item {
+    padding: 10px 0 8px 10px;
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+    line-height: 1.62;
+}
+.item h3, .item span {
+    display: inline-block;
+}
+
+.item span {
+    color: #219a44;
+}
+
+.button {
+    background-color: #69c;
+    color: #fff;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: 16px;
+    text-align: center;
+    padding: 10px;
+    display: block;
+}
+
 div#option {background-color:#DE5AB3; width:40%; float:left;}
-div#show {background-color:#7EDE5A; width:30%; float:left;}
+div#show {background-color:#7EDE5A; width:40%; float:left;}
 /***************************/
 #footer {
 	padding:10px 0px 0px 0px;
