@@ -55,7 +55,7 @@ CREATE TABLE `builds` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `status` tinyint NOT NULL DEFAULT '0',
 `name` varchar(50) NOT NULL DEFAULT '',
-`type` tinyint NOT NULL DEFAULT '0', /*1 for male, 2 for female, 3 both*/
+`type` tinyint NOT NULL DEFAULT '0', /*0 for female, 1 for male, 2 both*/
 `locate` varchar(20) NOT NULL DEFAULT '',
 `mark` varchar(50) NOT NULL DEFAULT '', 
 `created` datetime DEFAULT '0000-00-00 00:00:00',
@@ -72,6 +72,7 @@ CREATE TABLE `rooms` (
 `class_id` int(11) NOT NULL DEFAULT '0', /* this is writen by college_admin, used by college student */
 `bad_count` tinyint NOT NULL DEFAULT '0',
 `mark` varchar(10) NOT NULL DEFAULT '', /* 209, 301*/
+`bed_count` int(11) NOT NULL DEFAULT '0',
 `created` datetime DEFAULT '0000-00-00 00:00:00',
 `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),

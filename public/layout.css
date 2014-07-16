@@ -55,27 +55,9 @@ background:#dfc184;
 color:#000;
 }
 /***************************/
-#content {
-	padding:10px 10px 10px 50px;
-	/*background:#FFFFCC;*/ 
-}
-
-#content h2{
-	height:30px;
-	line-height:30px; overflow:hidden; /* 单行垂直居中：文本段落高度(line-height)和所在区域高度(height)设为一致即可。 */
-	/*background: #FFFF99;*/
-}
-#content h4{
-	height:30px;
-	line-height:40px; overflow:hidden;
-	/*background: #FF6699; /**/
-}
-#content p{
-	padding:6px 10px;
-	/*height:30px;*/
-	/*line-height:40px;*/
-	/*background: #6699FF;*/
-}
+div#menu {background-color:#ffff99; width:30%; float:left;}
+div#option {background-color:#DE5AB3; width:40%; float:left;}
+div#show {background-color:#7EDE5A; width:30%; float:left;}
 /***************************/
 #footer {
 	padding:10px 0px 0px 0px;
@@ -84,12 +66,4 @@ color:#000;
 	line-height:25px;  
 	background:#DDDDDD;
 }
-/***************************/
-.table {
-	margin-left:50px;
-	background-color: #99FF66;
-	}
-.table tr th { padding:10px 0px;}   
-.table tr td { padding:2px 6px;
-}   
 /***************************/

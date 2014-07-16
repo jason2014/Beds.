@@ -24,4 +24,18 @@ class Builds_model extends Base_Model {
         $query = $this->db->get_where('builds', array('name' => $name));
         return $query->row_array();
     }
+
+    public function get_empty_rooms($type = 1) {
+        $query = $this->db->query("select concat(b.name, '-', b.id) as name, r.mark as mark from builds b join rooms r on (b.id = r.build_id) where b.type = $type order by b.name;");
+        $result = $query->result_array();
+
+        $return = array();
+        foreach($result as $r) {
+            if(!isset($return[$r['name']])){
+                $return[$r['name']] = array();
+            }
+            $return[$r['name']][] = $r['mark'];            
+        }
+        return $return;
+    }
 }
