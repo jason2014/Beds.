@@ -8,10 +8,16 @@
 <body id="<?=$uri?>">
 <div class="header">
   <ul>
-     <li><a href="#">管理</a>
+     <li><a href="#">分配宿舍至各学院</a>
        <ul>
-         <li><a href="/admin/colleges">分配宿舍至各学院</a></li>
-         <li><a href="/admin/classes">分配床位至各班级</a></li>
+         <li><a href="/admin/colleges">按楼层分配</a></li>
+         <li><a href="/admin/classes">按床位分配</a></li>
+       </ul>
+     </li>
+     <li><a href="#">分配宿舍至各班级</a>
+       <ul>
+         <li><a href="/admin/colleges">按房间分配</a></li>
+         <li><a href="/admin/classes">按床位分配</a></li>
        </ul>
      </li>
      <li><a href="#">学生选宿舍</a></li>

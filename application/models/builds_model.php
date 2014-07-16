@@ -38,4 +38,23 @@ class Builds_model extends Base_Model {
         }
         return $return;
     }
+
+    public function get_storey() {
+
+        $query = $this->db->query("select id as build_id, name as build_name, type as build_type from builds order by type;");
+        $result = $query->result_array();
+
+        foreach($result as $k => $r) {
+            $build_id = $r['build_id'];
+            $query2 = $this->db->query("select storey, count(id) as total_rooms, sum(bed_count) as total_beds from rooms where build_id = $build_id group by storey order by storey");
+            $result2 = $query2->result_array();
+
+            if($r['build_type'] == 0)
+                $result[$k]['build_type'] = '女';
+            else
+                $result[$k]['build_type'] = '男';
+            $result[$k]['storey'] = $result2;
+        }
+        return $result;
+    }
 }

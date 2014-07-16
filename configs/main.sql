@@ -70,9 +70,9 @@ CREATE TABLE `rooms` (
 `build_id` int(11) NOT NULL DEFAULT '0', /* this refer to builds table*/
 `college_id` int(11) NOT NULL DEFAULT '0', /* this is writen by system_admin, used by college admin */
 `class_id` int(11) NOT NULL DEFAULT '0', /* this is writen by college_admin, used by college student */
-`bad_count` tinyint NOT NULL DEFAULT '0',
+`storey` tinyint NOT NULL DEFAULT '0',
 `mark` varchar(10) NOT NULL DEFAULT '', /* 209, 301*/
-`bed_count` int(11) NOT NULL DEFAULT '0',
+`bed_count` tinyint NOT NULL DEFAULT '4',
 `created` datetime DEFAULT '0000-00-00 00:00:00',
 `updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY (`id`),

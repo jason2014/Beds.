@@ -22,9 +22,18 @@ class admin extends CI_Controller {
         $this->load->model('colleges_model', 'colleges');
         $this->data['colleges'] = $this->colleges->get_colleges();
 
-        $this->load->model('builds_model', 'builds');        
-        $this->data['male_rooms'] = $this->builds->get_empty_rooms();
-        $this->data['female_rooms'] = $this->builds->get_empty_rooms(0);
+        $this->load->model('builds_model', 'builds');
+        $tmp = $this->builds->get_storey();
+        $storeys = array();
+        foreach($tmp as $tt) {
+            foreach($tt['storey'] as $t){
+                $t['build_id'] = $tt['build_id'];
+                $t['build_name'] = $tt['build_name'];
+                $t['build_type'] = $tt['build_type'];                                
+                $storeys[] = $t;
+            }
+        }
+        $this->data['storeys'] = $storeys;
 
         $this->load->view('templates/header', $this->data);
         $this->load->view('admin/college', $this->data);

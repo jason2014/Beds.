@@ -4,6 +4,9 @@ body{
 	color:#123456; /* 678832 */
 	background: #FFFFFE;
 }
+a {
+    text-decoration:none;
+}
 .clear {clear:both;}
 /***************************/
 .header {
@@ -64,7 +67,6 @@ div#menu {
 .item {
     padding: 10px 0 8px 10px;
     border-bottom: 1px solid #ececec;
-    cursor: pointer;
     line-height: 1.62;
 }
 .item h3, .item span {
