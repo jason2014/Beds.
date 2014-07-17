@@ -24,4 +24,5 @@
      <li><a href="/">关于</a></li>
  </ul>
 </div>
+<div class="clear"></div>     
 <div class="content">     
