@@ -10,7 +10,7 @@
      <select id="college" name="college">
      <option selected="selected" value="#">分配给某学院</option>
 <?php foreach($colleges as $college){?>
-<option value="<?=$college['id']?>"><?=$college['name']?>-<?=$college['all_count']?>人-<?=$college['male_count']?>男-<?=$college['female_count']?>女</option>
+<option value="<?=$college['id']?>"><?=$college['name']?>-<?=$college['all_count']?>/<?=$college['has_all_bed']?>人-<?=$college['male_count']?>/<?=$college['has_male_bed']?>男-<?=$college['female_count']?>/<?=$college['has_female_bed']?>女</option>
 <?php }?>
      </select>
      <a href="#" class="button">确定</a>
